@@ -204,7 +204,6 @@ interface Registrar
      * @param  string  $class
      * @param  \Closure|null  $callback
      * @return void
-     *
      */
     public function model($key, $class, Closure $callback = null);
 
