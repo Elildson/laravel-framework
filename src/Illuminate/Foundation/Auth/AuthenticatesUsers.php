@@ -28,13 +28,7 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
-       $response = Http::acceptJson()->post('http://localhost:8000/api/Auth/login', [
-            'email' => $request['email'],
-            'password' => $request['password'],
-        ]);
-        $result = json_decode((string)$response->getBody(), true);
-        Session::put('token', $result['access_token']);
-             
+                   
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
